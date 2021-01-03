@@ -2,18 +2,26 @@ package edu.kis.vh.nursery;
 
 public class HanoiRhymer extends DefaultCountingOutRhymer {
 
-	int totalRejected = 0;
+	private int totalRejected = 0;
 
 	private int reportRejected() {
-		return totalRejected;
+		return getTotalRejected();
 	}
 
 	@Override
 	public void countIn(int in) {
 	if (!callCheck() && in > peekaboo())
-		totalRejected++;
+		setTotalRejected(getTotalRejected() + 1);
 		else
 			super.countIn(in);
+	}
+
+	public int getTotalRejected() {
+		return totalRejected;
+	}
+
+	public void setTotalRejected(int totalRejected) {
+		this.totalRejected = totalRejected;
 	}
 }
 //alt + --> oraz alt + <-- sluzy do przechodzenia pomiedzy otwartymii plikami w zakladkach
