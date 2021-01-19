@@ -1,14 +1,16 @@
 package edu.kis.vh.nursery;
 
+import javax.swing.plaf.synth.SynthToolTipUI;
+
 public class DefaultCountingOutRhymer {
 
-	private static final int numbersTotal = 12;
-	private static final int startingTotal = -1;
-	private static final int fullTotal = 11;
+	private static final int NUMBERS_TOTAL = 12;
+	private static final int STARTING_TOTAL = -1;
+	private static final int FULL_TOTAL = 11;
 
-	private int[] numbers = new int[numbersTotal];
+	private int[] numbers = new int[NUMBERS_TOTAL];
 
-	private int total = startingTotal;
+	private int total = STARTING_TOTAL;
 
 	public void countIn(int in) {
 		if (!isFull())
@@ -16,11 +18,11 @@ public class DefaultCountingOutRhymer {
 	}
 
 	public boolean callCheck() {
-		return total == startingTotal;
+		return total == STARTING_TOTAL;
 	}
 
 	public boolean isFull() {
-		return total == fullTotal;
+		return total == FULL_TOTAL;
 	}
 
 	protected int peekaboo() {
